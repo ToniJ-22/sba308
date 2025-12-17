@@ -124,14 +124,14 @@ if (!assignment) continue;
 
 let date = new Date(assignment.due_at);
 let submitted = new Date(sub.submission.submitted_at);
-
+let now = new Date();
 if(date > new Date ) continue;
-
+let score = sub.submission.score;
 if(submitted > new Date){
     score -= assignment.points_possible * 0.1;
 }
 if (typeof score !== "number" || score < 0)
-     score = [];
+     score = 0;
 
 if (!learners[sub.learner_id]){
     learners[sub.learner_id] = {
